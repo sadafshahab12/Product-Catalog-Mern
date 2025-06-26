@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
+import Loader from "../components/Loader";
 const ProductDetails = () => {
   const { id } = useParams();
   const [productDetails, setProductDetails] = useState(null);
@@ -14,7 +15,12 @@ const ProductDetails = () => {
       .catch((err) => console.log("Erro fetching product: ", err));
   }, [id]);
 
-  if (!productDetails) return <div>Loading...</div>;
+  if (!productDetails)
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
   return (
     <div className="pb-10 px-8">
       <div className="max-w-2xl mx-auto  pt-4 space-y-5">
