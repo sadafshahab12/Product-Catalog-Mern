@@ -33,7 +33,7 @@ const ProductDetails = () => {
         <img
           src={productDetails.image}
           alt={productDetails.name}
-          className="w-100 h-100 object-contain  mb-6"
+          className="w-100 h-50 sm:h-100 object-contain  mb-6"
         />
         <p className="text-sm bg-teal-300 text-slate-800 inline px-4 rounded-full">
           {productDetails.category}
